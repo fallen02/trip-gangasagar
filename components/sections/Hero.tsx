@@ -7,7 +7,7 @@ export function Hero() {
     <div className="mx-auto max-w-[86rem] w-dvw">
       <Swiper loop={true} spaceBetween={50} className="relative h-[90%] w-[97%]  overflow-hidden rounded-2xl">
 
-        <SwiperSlide className="relative h-full w-full bg-[url(img/kapil.jpg)] px-50 py-50 bg-no-repeat bg-cover">
+        <SwiperSlide className="relative h-full w-full bg-[url(/img/kapil.jpg)] px-50 py-50 bg-no-repeat bg-cover">
           <div className="absolute h-full w-full  bg-radial from-gray-700/30  to-blue-400/40 top-0 left-0 -z-50" />
           <div className="flex flex-col gap-3">
             <p className="text-xl font-medium text-orange-400">
@@ -30,7 +30,7 @@ export function Hero() {
             </a>
           </div>
         </SwiperSlide>
-        <SwiperSlide className="relative h-full w-full bg-[url(img/car.jpeg)] px-50 py-50 bg-no-repeat bg-cover">
+        <SwiperSlide className="relative h-full w-full bg-[url(/img/car.jpeg)] px-50 py-50 bg-no-repeat bg-cover">
           <div className="absolute h-full w-full  bg-radial from-gray-700/30  to-orange-600/15 top-0 left-0 -z-50" />
           <div className="flex flex-col gap-3">
             <p className="text-xl font-medium text-orange-400">
