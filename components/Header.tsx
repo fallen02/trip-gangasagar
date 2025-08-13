@@ -40,6 +40,7 @@ export function Header() {
       >
         <motion.div
           className="lg:hidden w-dvw h-dvh  absolute z-20 backdrop-blur-sm"
+          //@ts-ignore
           variants={sidebarVariants}
         >
           <MobileMenu />
