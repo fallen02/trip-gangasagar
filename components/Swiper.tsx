@@ -54,7 +54,6 @@ export function SwiperComp() {
       <Swiper
         loop={true}
         spaceBetween={100}
-        slidesPerView={"auto"}
         autoplay={{ delay: 3000, disableOnInteraction: false }}
         modules={[Autoplay, Pagination]}
         className="w-full h-full "

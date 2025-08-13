@@ -1,52 +1,120 @@
-import { navMenu } from "@/constant/navmenu";
-
+import { useRef, useState } from "react";
+import * as motion from "motion/react-client";
+import { useWindowSize } from "react-use";
+import { Container } from "./Container";
+import { MenuToggle } from "./MenuToggle";
+import { NavLinks, navMenus } from "./NavLink";
 export function Header() {
+  const [mobileMenu, setMobileMenu] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { height, width } = useWindowSize();
+
+  const sidebarVariants = {
+    open: (height = 1000) => ({
+      clipPath: `circle(${height * 2 + 200}px at 40px 40px)`,
+      transition: {
+        type: "spring",
+        stiffness: 20,
+        restDelta: 2,
+      },
+    }),
+    closed: () => ({
+      clipPath: `circle(20px at ${width - 30}px 2em)`,
+      transition: {
+        delay: 0.2,
+        type: "spring",
+        stiffness: 400,
+        damping: 40,
+      },
+    }),
+  };
   return (
-    <div className="relative py-5 px-3 max-w-7xl mx-auto text-gray-900">
-      <nav className="flex flex-row w-full justify-between items-center">
-        <div className="font-ubuntu text-3xl tracking-tighter font-semibold">
-          Tour <span className="text-blue-700">Gangasagar</span>
-        </div>
-        <div className="flex justify-center items-center gap-8 px-10 py-2 bg-gray-50/20 rounded-2xl border border-black/20 backdrop-blur-2xl">
-          {navMenu.map((nav, index) => (
-            <a
-              href={nav.href}
-              className="text-[16px] tracking-tight font-medium font-ubuntu hover:text-gray-800"
-              key={index}
+    <header>
+      <motion.nav
+        initial={false}
+        animate={mobileMenu ? "open" : "closed"}
+        custom={height}
+        ref={containerRef}
+        className="relative"
+        onClick={() => setMobileMenu(!mobileMenu)}
+      >
+        <motion.div
+          className="lg:hidden w-dvw h-dvh  absolute z-20 backdrop-blur-sm"
+          variants={sidebarVariants}
+        >
+          <MobileMenu />
+        </motion.div>
+
+        <Container className="relative flex justify-between items-center py-5 z-50">
+          <h1 className="relative font-catamaran text-orange-600 font-extrabold text-base lg:text-2xl tracking-wider uppercase z-50">
+            Gangasagar Travels & Hotels
+          </h1>
+          <div className="flex justify-between items-center  gap-2 lg:gap-20">
+            <div className="hidden lg:flex gap-8  items-center">
+              <NavLinks />
+            </div>
+            <div className="hidden lg:inline-block relative group">
+              <div className="hidden lg:block absolute inset-0 bg-orange-600 z-0 border border-black translate-0 lg:translate-x-0.5 lg:translate-y-0.5 rounded-xl group-hover:translate-0 transition-transform duration-150" />
+              <a
+                href="#contact"
+                className="relative inline-flex rounded-xl no-underline items-center justify-center border border-black transition-all duration-150 -translate-x-0.5 -translate-y-0.5 group-hover:-translate-0 z-30  bg-gray-800 group-hover:bg-gray-950 text-gray-200 w-full lg:w-auto  px-3 py-1.5 text-sm lg:text-lg font-OpenSans font-medium"
+              >
+                +91 0123456789
+              </a>
+            </div>
+            <motion.div
+              // style={nav}
+              className="lg:hidden relative flex justify-between items-center "
             >
-              {nav.title}
-            </a>
-          ))}
-        </div>
-        <a className="bg-red-400 px-5 py-2.5 rounded-2xl font-medium flex justify-center items-center gap-2" href="#">
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <g clip-path="url(#clip0_4418_3951)">
-              <path
-                d="M9.39 6.01C9.57 6.26 9.7 6.49 9.79 6.71C9.88 6.92 9.93 7.13 9.93 7.32C9.93 7.56 9.86 7.8 9.72 8.03C9.59 8.26 9.4 8.5 9.16 8.74L8.4 9.53C8.29 9.64 8.24 9.77 8.24 9.93C8.24 10.01 8.25 10.08 8.27 10.16C8.3 10.24 8.33 10.3 8.35 10.36C8.53 10.69 8.84 11.12 9.28 11.64C9.73 12.16 10.21 12.69 10.73 13.22C11.27 13.75 11.79 14.24 12.32 14.69C12.84 15.13 13.27 15.43 13.61 15.61C13.66 15.63 13.72 15.66 13.79 15.69C13.87 15.72 13.95 15.73 14.04 15.73C14.21 15.73 14.34 15.67 14.45 15.56L15.21 14.81C15.46 14.56 15.7 14.37 15.93 14.25C16.16 14.11 16.39 14.04 16.64 14.04C16.83 14.04 17.03 14.08 17.25 14.17C17.47 14.26 17.7 14.39 17.95 14.56L21.26 16.91C21.52 17.09 21.7 17.3 21.81 17.55C21.91 17.8 21.97 18.05 21.97 18.33C21.97 18.69 21.89 19.06 21.72 19.42C21.55 19.78 21.33 20.12 21.04 20.44C20.55 20.98 20.01 21.37 19.4 21.62C18.8 21.87 18.15 22 17.45 22C16.43 22 15.34 21.76 14.19 21.27C13.04 20.78 11.89 20.12 10.75 19.29C9.6 18.45 8.51 17.52 7.47 16.49C6.44 15.45 5.51 14.36 4.68 13.22C3.86 12.08 3.2 10.94 2.72 9.81C2.24 8.67 2 7.58 2 6.54C2 5.86 2.12 5.21 2.36 4.61C2.6 4 2.98 3.44 3.51 2.94C4.15 2.31 4.85 2 5.59 2C5.87 2 6.15 2.06 6.4 2.18C6.66 2.3 6.89 2.48 7.07 2.74"
-                stroke="#fff"
-                stroke-width="1.5"
-                stroke-miterlimit="10"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </g>
-            <defs>
-              <clipPath id="clip0_4418_3951">
-                <rect width="24" height="24" fill="white" />
-              </clipPath>
-            </defs>
-          </svg>
-          <p  className="tracking-tight font-ubuntu">
-            +91 9876543210
-          </p>
-        </a>
-      </nav>
-    </div>
+              <MenuToggle toggle={() => setMobileMenu(!mobileMenu)} />
+            </motion.div>
+          </div>
+        </Container>
+      </motion.nav>
+    </header>
+  );
+}
+
+function MobileMenu() {
+  const navVariants = {
+    open: {
+      transition: { staggerChildren: 0.07, delayChildren: 0.2 },
+    },
+    closed: {
+      transition: { staggerChildren: 0.05, staggerDirection: -1 },
+    },
+  };
+  const itemVariants = {
+    open: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        y: { stiffness: 1000, velocity: -100 },
+      },
+    },
+    closed: {
+      y: 50,
+      opacity: 0,
+      transition: {
+        y: { stiffness: 1000 },
+      },
+    },
+  };
+  return (
+    <motion.div variants={navVariants} className="absolute w-full flex flex-col gap-2 top-1/10 px-5">
+      {navMenus.map((menu, index) => (
+        <motion.li
+          key={index}
+          whileTap={{ scale: 0.9 }}
+          variants={itemVariants}
+          className="list-none"
+        >
+          <a href={menu.href} className="font-ubuntu font-medium tracking-wider">
+            {menu.title}
+          </a>
+        </motion.li>
+      ))}
+      <motion.a href="tel:123456789" variants={itemVariants} className="mt-10 bg-orange-600 w-full py-3 text-center text-xl text-white font-ubuntu font-medium rounded-2xl">+1234567890</motion.a>
+    </motion.div>
   );
 }
