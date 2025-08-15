@@ -9,20 +9,21 @@ const offers = [
     img: carBook,
     desc: "Discover the joy of travel with our private car booking service, offering comfort and convenience whenever you need it.",
   },
-  {
-    name: "Private Boat Booking",
-    img: boatBook,
-    desc: "Set sail on your own adventure with our private boat booking service, offering exclusive access to stunning waterways and breathtaking views.",
-  },
+  
   {
     name: "Hotel and Resort Booking",
     img: hotelBook,
-    desc: "Book your dream hotel or resort today and indulge in luxury, comfort, and relaxation, offering a wide range of accommodations to suit every taste and budget.",
+    desc: "Book your dream hotel or resort today and indulge in luxury, comfort, and relaxation, offering a wide range of accommodations to suit every taste.",
   },
   {
     name: "Daramashala Booking",
     img: dharmashalaBook,
-    desc: "Escape to the serene beauty of Dharamshala with our booking service, where you can find cozy accommodations nestled near Kapilmuni Temple.",
+    desc: "Enjoy serene beauty of Dharamshala with our booking service, where you can find cozy accommodations nestled near Kapilmuni Temple.",
+  },
+  {
+    name: "Private Boat Booking",
+    img: boatBook,
+    desc: "Set sail on your own adventure with our private boat booking service, offering exclusive access to stunning waterways and breathtaking views.",
   },
 ];
 
@@ -31,7 +32,7 @@ export function OurOffer() {
     <div className="bg-orange-50">
       <Container className="py-10">
         <div className="flex flex-col justify-center items-center py-15 gap-3">
-          <p className="text-sm lg:text-base uppercase font-medium text-orange-700">
+          <p className="text-sm lg:text-base uppercase text-orange-700">
           Our Offer
         </p>
           <h1 className="text-4xl text-heading font-semibold tracking-wide">
@@ -57,7 +58,7 @@ export function OurOffer() {
                 <p className="text-xl font-semibold text-orange-800">
                   {offer.name}
                 </p>
-                <p className="text-sm text-desc">{offer.desc}</p>
+                <p className="text-sm font-light text-desc">{offer.desc}</p>
               <a
                 href=""
                 className="px-3 mt-5 py-1.5 bg-orange-600 rounded-full border-2 border-orange-700 w-fit text-white font-medium"

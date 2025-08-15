@@ -5,10 +5,10 @@ const features = ["24-hour support", "No hidden fees", "Booking flexibility"];
 
 export function Feature() {
   return (
-    <Container className="py-10 w-full  flex flex-col-reverse lg:flex-row">
+    <Container className="py-10 w-full flex flex-col lg:flex-row">
       <div className="w-full lg:w-2/5 h-full p-5 lg:p-10  flex flex-col gap-5 lg:gap-10">
         <div className="flex flex-col mt-1 lg:mt-10 gap-2.5 lg:gap-5">
-          <p className="text-sm lg:text-base uppercase font-medium text-orange-700">
+          <p className="text-sm lg:text-base uppercase  text-orange-700">
             About Us
           </p>
           <h1 className="text-3xl lg:text-4xl  font-medium tracking-tight text-heading ">

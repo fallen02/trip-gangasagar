@@ -27,7 +27,7 @@ export function Process() {
   return (
     <Container className="py-20 flex flex-col gap-10">
       <div className="flex flex-col gap-1 justify-center items-center">
-        <p className="text-sm lg:text-base uppercase font-medium text-orange-700">
+        <p className="text-sm lg:text-base uppercase  text-orange-700">
           Step By Step Process
         </p>
         <h1 className="text-2xl text-center lg:text-4xl font-medium text-heading">
@@ -46,7 +46,7 @@ export function Process() {
               <h1 className="text-base lg:text-xl font-medium  text-heading mt-2 mb-3">
                 {process.title}
               </h1>
-              <p className="text-xs lg:text-sm text-desc text-start lg:text-center">{process.desc}</p>
+              <p className="text-xs lg:text-sm text-desc text-start lg:text-center font-light">{process.desc}</p>
             </div>
           </div>
         ))}
