@@ -1,7 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Container } from "../Container";
-import { Header } from "../Header";
 import { Autoplay } from "swiper/modules";
+import "swiper/css";
 
 export function Hero() {
   return (

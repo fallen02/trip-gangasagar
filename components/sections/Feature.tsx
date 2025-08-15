@@ -9,8 +9,8 @@ export function Feature() {
       <div className="w-full lg:w-2/5 h-full p-5 lg:p-10  flex flex-col gap-5 lg:gap-10">
         <div className="flex flex-col mt-1 lg:mt-10 gap-2.5 lg:gap-5">
           <p className="text-sm lg:text-base uppercase font-medium text-orange-700">
-          About Us
-        </p>
+            About Us
+          </p>
           <h1 className="text-3xl lg:text-4xl  font-medium tracking-tight text-heading ">
             Bring you ultimate travel experience
           </h1>
