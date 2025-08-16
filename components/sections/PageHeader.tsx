@@ -5,7 +5,7 @@ import "swiper/css/effect-fade";
 
 interface HeaderProps {
   title: string;
-  desc: string;
+  desc?: string;
 }
 
 export function PageHeader({ title, desc }: HeaderProps) {
@@ -13,12 +13,14 @@ export function PageHeader({ title, desc }: HeaderProps) {
     <div className="mx-auto max-w-[86rem] w-dvw ">
       <div className="relative flex justify-center mx-auto max-w-[86rem] w-dvw">
         <div className="absolute h-full w-[97%] bg-black/50 z-10 px-10 py-20 flex flex-col justify-center items-center gap-0 lg:gap-2 rounded-2xl">
-          <h1 className="text-2xl lg:text-6xl font-medium text-orange-600">
+          <h1 className="text-2xl lg:text-6xl font-medium text-gray-100">
             {title}
           </h1>
-          <p className="w-full lg:w-[650px] text-sm text-center lg:text-lg text-gray-100">
+          {
+            desc ? (<p className="w-full lg:w-[650px] text-sm text-center lg:text-lg text-gray-200">
             {desc}
-          </p>
+          </p>) : ""
+          }
         </div>
         <Swiper
           autoplay={{ delay: 5000, disableOnInteraction: false }}

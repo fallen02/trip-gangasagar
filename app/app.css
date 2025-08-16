@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/forms";
 
 @theme {
   --font-ubuntu: "Ubuntu", sans-serif;
@@ -9,5 +10,5 @@
 
 html,
 body {
-  @apply bg-white ;
+  @apply bg-gray-100 ;
 }
