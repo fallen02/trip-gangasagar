@@ -3,6 +3,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import z from "zod";
+import toast, { Toaster } from "react-hot-toast";
+import { LoaderCircle, SendHorizonal } from "lucide-react";
 
 export function ContactForm() {
   const [loading, setLoading] = useState(false);
@@ -20,7 +22,7 @@ export function ContactForm() {
     register,
     handleSubmit,
     formState: { errors },
-    reset
+    reset,
   } = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -33,7 +35,6 @@ export function ContactForm() {
 
   async function HandleSubmit(values: z.infer<typeof formSchema>) {
     const { fullname, email, phone, message } = values;
-    reset()
 
     try {
       setLoading(true);
@@ -42,11 +43,18 @@ export function ContactForm() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({fullname, email,phone, message})
-      }).then(res => res.json());
+        body: JSON.stringify({ fullname, email, phone, message }),
+      });
+      setLoading(false);
 
-      console.log(response)
-    } catch (error) {}
+      if (response.status === 200) toast.success("Email sent successfully!");
+      else toast.error("Something went wrong");
+      reset();
+    } catch (error) {
+      // @ts-ignore
+      toast.error(error.message);
+      setLoading(false);
+    }
   }
 
   return (
@@ -60,7 +68,10 @@ export function ContactForm() {
           onSubmit={handleSubmit(HandleSubmit)}
         >
           <div className="grid gap-1 lg:gap-2">
-            <label htmlFor="fullname" className="text-sm lg:text-base text-gray-700">
+            <label
+              htmlFor="fullname"
+              className="text-sm lg:text-base text-gray-700"
+            >
               Full Name
             </label>
             <input
@@ -82,7 +93,10 @@ export function ContactForm() {
           </div>
           <div className="grid grid-flow-col gap-5 w-full">
             <div className="grid gap-1 lg:gap-2">
-              <label htmlFor="email" className="text-sm lg:text-base text-gray-700">
+              <label
+                htmlFor="email"
+                className="text-sm lg:text-base text-gray-700"
+              >
                 Email
               </label>
               <input
@@ -106,7 +120,10 @@ export function ContactForm() {
               />
             </div>
             <div className="grid gap-1 lg:gap-2">
-              <label htmlFor="phone" className="text-sm lg:text-base text-gray-700">
+              <label
+                htmlFor="phone"
+                className="text-sm lg:text-base text-gray-700"
+              >
                 Phone No
               </label>
               <input
@@ -128,7 +145,10 @@ export function ContactForm() {
             </div>
           </div>
           <div className="grid gap-1 lg:gap-2">
-            <label htmlFor="message" className="text-sm lg:text-base text-gray-700">
+            <label
+              htmlFor="message"
+              className="text-sm lg:text-base text-gray-700"
+            >
               Message
             </label>
             <textarea
@@ -142,13 +162,23 @@ export function ContactForm() {
           </div>
           <button
             type="submit"
-            // onClick={HandleSubmit}
             className="bg-orange-600 w-fit px-8 py-1.5 lg:px-10 lg:py-3 rounded-2xl text-lg font-medium text-white cursor-pointer"
           >
-            Submit
+            {loading ? (
+              <span className="flex gap-4 items-center">
+                <LoaderCircle className="animate-spin" />
+                Please Wait
+              </span>
+            ) : (
+              <span className="flex gap-4 items-center">
+                <SendHorizonal />
+                Sumbit
+              </span>
+            )}
           </button>
         </form>
       </div>
+      <Toaster position="top-right" />
     </div>
   );
 }
