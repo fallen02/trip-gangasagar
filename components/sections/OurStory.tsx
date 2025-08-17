@@ -1,3 +1,4 @@
+import { bookLink } from "@/constant/navmenu";
 import { Container } from "../Container";
 
 export function OurStory() {
@@ -11,15 +12,14 @@ export function OurStory() {
           It feels like family (Because it is)
         </h1>
         <p className="font-thin text-sm lg:text-base text-desc">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente aut
-          fugiat placeat voluptas dicta rerum recusandae repellat ullam, ea
-          aliquam animi inventore? Veniam labore nisi exercitationem soluta
-          libero deserunt vitae!
+          Experience a warm and welcoming atmosphere where it truly feels like
+          family—because we treat you like one. Join us and become part of a
+          community that cares and supports one another.
         </p>
         <div className="relative group w-fit">
           <div className="absolute inset-0 bg-gray-800 z-0 border border-gray-800 translate-0 lg:translate-x-0.5 lg:translate-y-0.5 rounded-full group-hover:translate-0 transition-transform duration-150" />
           <a
-            href="#contact"
+            href={bookLink}
             className="relative inline-flex rounded-full no-underline items-center justify-center border border-black transition-all duration-150 -translate-x-0.5 -translate-y-0.5 group-hover:-translate-0 z-30  bg-orange-600 group-hover:bg-gray-100 text-gray-200 group-hover:text-orange-600 w-full lg:w-auto  px-3 py-1.5 text-sm lg:text-lg font-OpenSans font-medium"
           >
             Book Now
@@ -27,8 +27,12 @@ export function OurStory() {
         </div>
       </div>
       <div className="flex gap-5">
-        <img src="https://placehold.co/400x600" alt="" className=""/>
-        <img src="https://placehold.co/400x600" alt="" className="hidden lg:block"/>
+        <img src="https://placehold.co/400x600" alt="" className="" />
+        <img
+          src="https://placehold.co/400x600"
+          alt=""
+          className="hidden lg:block"
+        />
       </div>
     </Container>
   );

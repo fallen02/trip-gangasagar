@@ -12,22 +12,22 @@ const resons = [
   {
     icon: MessageCircleMore,
     title: "24-hour Support",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    desc: "We are here for you 24/7, ensuring you receive assistance whenever you need it. ",
   },
   {
     icon: Smile,
     title: "No hidden fees",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    desc: "Experience peace of mind knowing exactly what to expect without any surprises.",
   },
   {
     icon: CircleCheckBig,
     title: "Booking flexibility",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    desc: "We understand that plans can change, and we're here to accommodate your needs.",
   },
   {
     icon: BadgePercent,
     title: "Affordable Price",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    desc: "Enjoy premium services at rates that won't break the bank.",
   },
 ];
 

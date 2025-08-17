@@ -1,3 +1,4 @@
+import { bookLink } from "@/constant/navmenu";
 import { Container } from "../Container";
 import { SwiperComp } from "../Swiper";
 
@@ -9,12 +10,22 @@ export function Destinations() {
           top destination
         </p>
         <h1 className="text-heading text-2xl lg:text-4xl font-medium">
-            Together, Let's Make Your Holidays Unforgettable!
+          Together, Let's Make Your Holidays Unforgettable!
         </h1>
-        <p className="text-sm lg:text-lg font-thin text-desc">Lorem ipsum dolor sit amet consectetur. Integer id semper viverra ornare nulla metus suspendisse. Nunc placerat vel diam risus.</p>
-        <a href="" className="px-3 lg:px-5 py-1.5 lg:py-2.5 rounded-full border-2 border-orange-700 w-fit text-orange-700 hover:bg-orange-500 hover:text-white hover:border-orange-500 transition-colors delay-100  font-medium">Call Us Now</a>
+        <p className="text-sm lg:text-lg font-thin text-desc">
+          Together, we can craft an unforgettable holiday experience filled with
+          joy, adventure, and cherished memories.
+        </p>
+        <a
+          href={bookLink}
+          className="px-3 lg:px-5 py-1.5 lg:py-2.5 rounded-full border-2 border-orange-700 w-fit text-orange-700 hover:bg-orange-500 hover:text-white hover:border-orange-500 transition-colors delay-100  font-medium"
+        >
+          Call Us Now
+        </a>
       </div>
-      <div className="w-full lg:w-8/12 "><SwiperComp /></div>
+      <div className="w-full lg:w-8/12 ">
+        <SwiperComp />
+      </div>
     </Container>
   );
 }

@@ -1,3 +1,4 @@
+import { GoogleMaplink } from "@/constant/navmenu";
 import { Mail, Phone } from "lucide-react";
 
 export function ContactInfo(){
@@ -49,7 +50,7 @@ export function ContactInfo(){
           </div>
           <div className="flex justify-center items-center lg:justify-start">
             <a
-            href=""
+            href={GoogleMaplink}
             className="w-fit bg-white border text-orange-500 border-orange-500 py-5 px-10 text-lg font-medium rounded-full"
           >
             Find Us on Google Map

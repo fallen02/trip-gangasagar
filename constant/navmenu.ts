@@ -1,3 +1,8 @@
+export const mailLink = "mailto:gangasagartravelsandhotel@gmail.com"
+export const bookLink = "tel:+916297368883"
+export const whatsappLink = "http://web.whatsapp.com"
+export const GoogleMaplink = "https://www.google.com"
+
 export const navMenu = [
   {
     title: "Home",

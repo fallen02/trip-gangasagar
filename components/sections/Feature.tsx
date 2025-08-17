@@ -15,10 +15,10 @@ export function Feature() {
             Bring you ultimate travel experience
           </h1>
           <p className="text-base lg:text-lg text-desc">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi,
-            animi provident mollitia blanditiis dignissimos quam ad fuga
-            repellat obcaecati atque placeat alias est quia amet quasi porro ea
-            ratione odio..
+            Embark on a journey that promises the ultimate travel experience,
+            combining adventure, comfort, and unforgettable memories. From
+            luxurious accommodations to personalized services, every moment is
+            designed to exceed your expectations.
           </p>
         </div>
         <div className="flex flex-col gap-0.5 lg:gap-2 ">
@@ -30,7 +30,7 @@ export function Feature() {
           ))}
         </div>
         <a
-          href="#"
+          href="/about"
           className="px-3 lg:px-5 py-1.5 lg:py-2.5 bg-orange-600 w-fit rounded-full text-base lg:text-lg font-medium text-white border-2 border-orange-800/50"
         >
           Learn More
@@ -39,15 +39,15 @@ export function Feature() {
       <div className="w-full lg:w-3/5 my-5 lg:my-15  relative ">
         <div className="absolute bottom-0 bg-white pt-3 pr-3 rounded-tr-3xl">
           <div className="relative bg-orange-500/50 py-5 lg:py-10 px-3 lg:px-5 rounded-xl flex flex-col justify-center items-center">
-            <p className="text-2xl lg:text-4xl font-bold text-heading">5+</p>
+            <p className="text-2xl lg:text-4xl font-bold text-heading">5000+</p>
             <p className="text-sm lg:text-lg text-gray-700">
-              Years Of Experience
+              Happy Customers
             </p>
           </div>
         </div>
         <div className="absolute right-0 bg-white pl-3 pb-3 rounded-bl-3xl">
           <div className="relative bg-lime-500/50 py-5 lg:py-10 px-3 lg:px-5 rounded-xl flex flex-col justify-center items-center">
-            <p className="text-2xl lg:text-4xl font-bold text-heading">5+</p>
+            <p className="text-2xl lg:text-4xl font-bold text-heading">3+</p>
             <p className="text-sm lg:text-lg text-gray-700">
               Years Of Experience
             </p>

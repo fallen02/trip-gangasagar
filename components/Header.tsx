@@ -4,6 +4,7 @@ import { useWindowSize } from "react-use";
 import { Container } from "./Container";
 import { MenuToggle } from "./MenuToggle";
 import { NavLinks, navMenus } from "./NavLink";
+import { bookLink } from "@/constant/navmenu";
 export function Header() {
   const [mobileMenu, setMobileMenu] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -47,9 +48,12 @@ export function Header() {
         </motion.div>
 
         <Container className="relative flex justify-between items-center py-5 z-50">
-          <h1 className="relative font-catamaran text-orange-600 font-extrabold text-base lg:text-2xl tracking-wider uppercase z-50">
+          <a
+            href="/"
+            className="relative font-catamaran text-orange-600 font-extrabold text-base lg:text-2xl tracking-wider uppercase z-50"
+          >
             Gangasagar Travels & Hotels
-          </h1>
+          </a>
           <div className="flex justify-between items-center  gap-2 lg:gap-20">
             <div className="hidden lg:flex gap-8  items-center">
               <NavLinks />
@@ -57,10 +61,10 @@ export function Header() {
             <div className="hidden lg:inline-block relative group">
               <div className="hidden lg:block absolute inset-0 bg-orange-600 z-0 border border-black translate-0 lg:translate-x-0.5 lg:translate-y-0.5 rounded-xl group-hover:translate-0 transition-transform duration-150" />
               <a
-                href="#contact"
+                href={bookLink}
                 className="relative inline-flex rounded-xl no-underline items-center justify-center border border-black transition-all duration-150 -translate-x-0.5 -translate-y-0.5 group-hover:-translate-0 z-30  bg-gray-800 group-hover:bg-gray-950 text-gray-200 w-full lg:w-auto  px-3 py-1.5 text-sm lg:text-lg font-OpenSans font-medium"
               >
-                +91 0123456789
+                +91 6297368883
               </a>
             </div>
             <motion.div
@@ -102,7 +106,10 @@ function MobileMenu() {
     },
   };
   return (
-    <motion.div variants={navVariants} className="absolute w-full flex flex-col gap-2 top-1/10 px-5">
+    <motion.div
+      variants={navVariants}
+      className="absolute w-full flex flex-col gap-2 top-1/10 px-5"
+    >
       {navMenus.map((menu, index) => (
         <motion.li
           key={index}
@@ -110,12 +117,21 @@ function MobileMenu() {
           variants={itemVariants}
           className="list-none"
         >
-          <a href={menu.href} className="font-ubuntu font-medium tracking-wider">
+          <a
+            href={menu.href}
+            className="font-ubuntu font-medium tracking-wider"
+          >
             {menu.title}
           </a>
         </motion.li>
       ))}
-      <motion.a href="tel:123456789" variants={itemVariants} className="mt-10 bg-orange-600 w-full py-3 text-center text-xl text-white font-ubuntu font-medium rounded-2xl">+1234567890</motion.a>
+      <motion.a
+        href={bookLink}
+        variants={itemVariants}
+        className="mt-10 bg-orange-600 w-full py-3 text-center text-xl text-white font-ubuntu font-medium rounded-2xl"
+      >
+        +91 6297368883
+      </motion.a>
     </motion.div>
   );
 }

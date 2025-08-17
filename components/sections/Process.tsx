@@ -6,19 +6,19 @@ const processes = [
   {
     anno: "Step 1",
     title: "View and Select  Services",
-    desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi, animi provident mollitia.",
+    desc: "Explore and select from our diverse range of services tailored to enhance your travel experience.",
     img: One,
   },
   {
     anno: "Step 2",
     title: "Call Us & Get all Details",
-    desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi, animi provident mollitia.",
+    desc: "We are ready to assist you with any inquiries, provide information about our services, and help you plan your perfect trip.",
     img: Two,
   },
   {
     anno: "Step 3",
     title: "Get Confirmation & Enjoy",
-    desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi, animi provident mollitia.",
+    desc: "Once you receive your confirmation, you can relax and look forward to an enjoyable experience! With everything arranged, it's time to immerse yourself in the journey and create unforgettable memories.",
     img: Three,
   },
 ];
@@ -37,7 +37,7 @@ export function Process() {
       <div className="flex flex-col lg:flex-row w-full justify-center items-center gap-5 lg:gap-20">
         {processes.map((process, index) => (
           <div
-            className="relative flex flex-row lg:flex-col items-center py-3 px-1.5 lg:py-15 lg:px-10 justify-center gap-3 bg-orange-50 shadow rounded-xl"
+            className="relative w-full lg:w-1/3 flex flex-row lg:flex-col items-center py-3 px-1.5 lg:py-15 lg:px-10 justify-center gap-3 bg-gray-50 shadow rounded-xl"
             key={index}
           >
             <p className="absolute top-1/12  left-1 lg:left-5 bg-orange-600 px-2.5 lg:px-3.5 py-0.5 lg:py-1.5 text-sm text-white font-semibold rounded-2xl">{process.anno}</p>

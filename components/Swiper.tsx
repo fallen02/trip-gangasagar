@@ -5,16 +5,23 @@ import { useCallback, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { ChevronRight, ChevronLeft } from "lucide-react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import Kapil from '@/app/assets/kapil.jpg'
+import LightHouse from '@/app/assets/lighthouse.jpg'
+import NagSarobar from '@/app/assets/nagSarbar.jpeg'
+import { bookLink } from "@/constant/navmenu";
 
 const topDestinations = [
   {
     name: "Kapilmuni Temple",
+    src: Kapil
   },
   {
     name: "Light House ",
+    src: LightHouse
   },
   {
     name: "Nag sarabar",
+    src: NagSarobar
   },
 ];
 
@@ -53,8 +60,10 @@ export function SwiperComp() {
 
       <Swiper
         loop={true}
-        spaceBetween={100}
+        spaceBetween={50}
         autoplay={{ delay: 3000, disableOnInteraction: false }}
+        speed={1000}
+        
         modules={[Autoplay, Pagination]}
         className="w-full h-full "
         onSwiper={(swiper) => {
@@ -71,11 +80,11 @@ export function SwiperComp() {
                 <div className="relative h-full w-full flex justify-end items-end">
                   <div className="absolute bg-gradient-to-t  from-orange-700/30 to-50% to-transparent w-full h-full" />
                   <div className="h-full w-full flex items-end justify-between px-10 py-5 z-50">
-                    <p className="text-xl lg:text-2xl font-semibold text-gray-800">
+                    <p className="text-xl lg:text-2xl font-semibold text-gray-100">
                       {destination.name}
                     </p>
                     <a
-                      href="#"
+                      href={bookLink}
                       className="px-2 lg:px-5 py-1 lg:py-2.5 bg-orange-800 rounded-full text-base lg:text-lg font-medium text-gray-200"
                     >
                       Call Now
@@ -83,11 +92,13 @@ export function SwiperComp() {
                   </div>
                 </div>
               </div>
-              <img
-                src="https://placehold.co/900x400"
+              <div className="h-full w-full overflow-hidden">
+                <img
+                src={destination.src}
                 alt=""
-                className="h-auto object-cover w-full z-0 rounded-2xl"
+                className="h-[400px]  object-cover w-full z-0 rounded-2xl"
               />
+              </div>
             </div>
           </SwiperSlide>
         ))}

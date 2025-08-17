@@ -1,5 +1,6 @@
 import { Mail, Phone } from "lucide-react";
 import { Container } from "./Container";
+import { bookLink, mailLink } from "@/constant/navmenu";
 
 const footerDatas = [
   {
@@ -28,56 +29,57 @@ const footerDatas = [
     data: [
       {
         title: "Private Car Booking",
-        href: "#call me",
+        href: bookLink,
       },
       {
         title: "Private Ferry Booking",
-        href: "#call me",
+        href: bookLink,
       },
       {
         title: "Hotel and Resort Booking",
-        href: "#call me",
+        href: bookLink,
       },
       {
         title: "Guests House Book",
-        href: "#call me",
+        href: bookLink,
       },
       {
         title: "Home Stay",
-        href: "#call me",
+        href: bookLink,
       },
       {
         title: "Dharamashala Booking",
-        href: "#call me",
+        href: bookLink,
       },
       {
         title: "Kachuberia to Gangasagar Car Booking",
+        href: bookLink,
       },
     ],
   },
   {
     title: "Need Help?",
     data: [
-      {
-        title: "FAQs",
-        href: "/faqs",
-      },
+      // {
+      //   title: "FAQs",
+      //   href: "/faqs",
+      // },
       {
         title: "Customer Care",
-        href: "#callme",
+        href: bookLink,
       },
-      {
-        title: "Sefty Tips",
-        href: "/sefty-tips",
-      },
-      {
-        title: "Privacy Policy",
-        href: "/privacy-policy",
-      },
-      {
-        title: "Terms of Use",
-        href: "/terms",
-      },
+      // {
+      //   title: "Sefty Tips",
+      //   href: "/sefty-tips",
+      // },
+      // {
+      //   title: "Privacy Policy",
+      //   href: "/privacy-policy",
+      // },
+      // {
+      //   title: "Terms of Use",
+      //   href: "/terms",
+      // },
     ],
   },
 ];
@@ -91,29 +93,36 @@ export function Footer() {
             Gangasagar Hotel & Travels
           </h1>
           <p className="text-desc text-sm lg:text-base">
-            There are many variations of passages of Lorem Ipsum available, but
-            the majority have suffered alteration in some form.
+            Gangasagar Hotel & Travels offers a seamless blend of comfortable
+            accommodations and reliable travel services. Whether you're looking
+            for a cozy stay or convenient transportation, we are here to cater
+            to all your needs!
           </p>
           <div className="flex flex-col gap-2 mt-3">
-            <div className="flex items-center gap-3">
+            <a href={bookLink} className="flex items-center gap-3">
               <div className="bg-orange-600 p-1 lg:p-2 rounded-full">
                 <Phone className="size-3 lg:size-5 stroke-white" />
               </div>
               <p className="text-base font-ubuntu  font-medium text-gray-800">
-                +91 1234567890
+                +91 6297368883
               </p>
-            </div>
-            <div className="flex items-center gap-3">
+            </a>
+            <a href={mailLink} className="flex items-center gap-3">
               <div className="bg-orange-600 p-1 lg:p-2 rounded-full">
                 <Mail className="size-3 lg:size-5 stroke-white" />
               </div>
-              <p className="text-base font-ubuntu font-medium text-gray-800">abc@xyz.com</p>
-            </div>
+              <p className="text-base font-ubuntu font-medium text-gray-800">
+                gangasagartravelsandhotel@gmail.com
+              </p>
+            </a>
           </div>
         </div>
         <div className="w-full lg:w-8/12 flex flex-col gap-5 lg:gap-0 lg:flex-row mt-10 lg:mt-0">
           {footerDatas.map((footerdata, index) => (
-            <div className="w-full lg:w-1/4 px-0 lg:px-5 flex flex-col gap-1" key={index}>
+            <div
+              className="w-full lg:w-1/4 px-0 lg:px-5 flex flex-col gap-1"
+              key={index}
+            >
               <h1 className="text-base lg:text-xl font-semibold text-heading">
                 {footerdata.title}
               </h1>
@@ -145,7 +154,10 @@ export function Footer() {
       </div>
       <div className="h-0.5 bg-gray-300/80" />
       <p className="pt-5 lg:pt-10 text-xs lg:text-lg  text-gray-700">
-        <span className="text-orange-700">&copy; Gangasagar Hotels & Travels</span> All Rights Reserved.
+        <span className="text-orange-700">
+          &copy; Gangasagar Hotels & Travels
+        </span>{" "}
+        All Rights Reserved.
       </p>
     </Container>
   );
@@ -197,21 +209,21 @@ const socialData = [
   {
     title: "Facebook",
     icon: <FacebookIcon />,
-    href: "https://fb.com",
+    href: "https://www.facebook.com/share/18Z7XhQU9G/",
   },
-  {
-    title: "Instagram",
-    icon: <InstagramIcon />,
-    href: "#",
-  },
-  {
-    title: "Twitter",
-    icon: <TwitterIcon />,
-    href: "#",
-  },
-  {
-    title: "Youtube",
-    icon: <YoutubeIcon />,
-    href: "#",
-  },
+  // {
+  //   title: "Instagram",
+  //   icon: <InstagramIcon />,
+  //   href: "#",
+  // },
+  // {
+  //   title: "Twitter",
+  //   icon: <TwitterIcon />,
+  //   href: "#",
+  // },
+  // {
+  //   title: "Youtube",
+  //   icon: <YoutubeIcon />,
+  //   href: "#",
+  // },
 ];

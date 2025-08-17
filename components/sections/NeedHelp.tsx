@@ -1,28 +1,29 @@
 import { Mail, MessageCircleMore, Phone } from "lucide-react";
 import { Container } from "../Container";
 import { DualIcon } from "../DualIcon";
+import { bookLink, mailLink, whatsappLink } from "@/constant/navmenu";
 
 const helps = [
   {
     icon: MessageCircleMore,
     title: "Chat on Whastapp",
-    desc: "Chat instantly with us during our normal hours, or leave a message and we will get back to you ASAP.",
+    desc: "Connect with us instantly through WhatsApp for quick and convenient communication. Whether you have questions or need assistance, we're just a message away!",
     btnTxt: 'Chat Now',
-    href: '/whatapp'
+    href: whatsappLink
   },
   {
     icon: Mail,
     title: "Mail us Anytime",
-    desc: "Chat instantly with us during our normal hours, or leave a message and we will get back to you ASAP.",
+    desc: "Feel free to email us anytime with your inquiries or feedback. We're always here to listen and respond promptly to ensure your needs are met.",
     btnTxt: 'Drop a Mail',
-    href: 'mailto:mail@mail.com'
+    href: mailLink
   },
   {
     icon: Phone,
     title: "Ring a Phone",
-    desc: "Chat instantly with us during our normal hours, or leave a message and we will get back to you ASAP.",
+    desc: "Give us a call anytime for immediate assistance or to discuss your needs. Our friendly team is ready to help you with whatever you require!",
     btnTxt: 'Call Now',
-    href: 'tel:sakjd'
+    href: bookLink
   },
 ];
 

@@ -1,8 +1,9 @@
 import { Container } from "../Container";
-import carBook from "@/app/assets/carbook.jpg";
+import carBook from "@/app/assets/car_offer.jpeg";
 import boatBook from "@/app/assets/boatbook.jpg";
-import hotelBook from "@/app/assets/hotelbook.jpg";
-import dharmashalaBook from "@/app/assets/dharamshalabook.jpeg";
+import hotelBook from "@/app/assets/hotel_offer.jpeg";
+import dharmashalaBook from "@/app/assets/dharmashala_offer.jpeg";
+import { bookLink } from "@/constant/navmenu";
 const offers = [
   {
     name: "Private Car Booking",
@@ -39,8 +40,7 @@ export function OurOffer() {
             What We Offer?
           </h1>
           <p className="text-center text-desc">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti
-            doloribus maxime cumque.
+            We offer a comprehensive range of services to enhance your travel experience.1
           </p>
         </div>
         <div className="flex flex-col lg:flex-row w-full justify-between  gap-3">
@@ -55,12 +55,12 @@ export function OurOffer() {
                 className="w-full h-full object-cover rounded-t-2xl"
               />
               <div className="flex flex-col gap-2 p-5">
-                <p className="text-xl font-semibold text-orange-800">
+                <p className="text-xl font-semibold text-orange-600">
                   {offer.name}
                 </p>
                 <p className="text-sm font-light text-desc">{offer.desc}</p>
               <a
-                href=""
+                href={bookLink}
                 className="px-3 mt-5 py-1.5 bg-orange-600 rounded-full border-2 border-orange-700 w-fit text-white font-medium"
                 >
                 Call Us Now
