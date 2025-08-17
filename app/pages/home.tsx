@@ -8,7 +8,8 @@ import { Destinations } from "@/components/sections/Destination";
 export function meta({}: Route.MetaArgs) {
   return [
     { title: "Gangasagar Travels & Hotels" },
-    { name: "description", content: "Welcome to React Router!" },
+    { name: "description", content: "The best private cars and hotels at Gangasagar" },
+    
   ];
 }
 
