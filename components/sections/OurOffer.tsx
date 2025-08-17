@@ -1,7 +1,7 @@
 import { Container } from "../Container";
 import carBook from "@/app/assets/car_offer.jpeg";
 import boatBook from "@/app/assets/boatbook.jpg";
-import hotelBook from "@/app/assets/hotel_offer.jpeg";
+import hotelBook from "@/app/assets/hotel-font.jpeg";
 import dharmashalaBook from "@/app/assets/dharmashala_offer.jpeg";
 import { bookLink } from "@/constant/navmenu";
 const offers = [
@@ -9,22 +9,30 @@ const offers = [
     name: "Private Car Booking",
     img: carBook,
     desc: "Discover the joy of travel with our private car booking service, offering comfort and convenience whenever you need it.",
+    href: bookLink,
+    btnTxt: "Book Now"
   },
   
   {
     name: "Hotel and Resort Booking",
     img: hotelBook,
     desc: "Book your dream hotel or resort today and indulge in luxury, comfort, and relaxation, offering a wide range of accommodations to suit every taste.",
+    href: '/hotels',
+    btnTxt: "Learn More"
   },
   {
     name: "Daramashala Booking",
     img: dharmashalaBook,
     desc: "Enjoy serene beauty of Dharamshala with our booking service, where you can find cozy accommodations nestled near Kapilmuni Temple.",
+    href: bookLink,
+    btnTxt: "Book Now"
   },
   {
     name: "Private Boat Booking",
     img: boatBook,
     desc: "Set sail on your own adventure with our private boat booking service, offering exclusive access to stunning waterways and breathtaking views.",
+    href: bookLink,
+    btnTxt: "Book Now"
   },
 ];
 
@@ -49,21 +57,23 @@ export function OurOffer() {
               className=" w-full lg:w-1/4 flex flex-col gap-5 bg-gray-100 rounded-xl shadow pb-5"
               key={index}
             >
-              <img
+              <div className="">
+                <img
                 src={offer.img}
                 alt=""
-                className="w-full h-full object-cover rounded-t-2xl"
+                className="w-full h-[300px] object-center object-cover rounded-t-2xl"
               />
+              </div>
               <div className="flex flex-col gap-2 p-5">
                 <p className="text-xl font-semibold text-orange-600">
                   {offer.name}
                 </p>
                 <p className="text-sm font-light text-desc">{offer.desc}</p>
               <a
-                href={bookLink}
+                href={offer.href}
                 className="px-3 mt-5 py-1.5 bg-orange-600 rounded-full border-2 border-orange-700 w-fit text-white font-medium"
                 >
-                Call Us Now
+                {offer.btnTxt}
               </a>
                 </div>
             </div>
