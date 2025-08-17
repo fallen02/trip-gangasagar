@@ -1,5 +1,4 @@
 import { Container } from "../Container";
-import FeatureImg from "@/app/assets/feature.webp";
 
 const features = ["24-hour support", "No hidden fees", "Booking flexibility"];
 

@@ -11,7 +11,7 @@ interface HeaderProps {
 
 export function PageHeader({ title, desc }: HeaderProps) {
   return (
-    <Container className="px-10 py-15 lg:px-20 lg:py-30  flex justify-center items-center flex-col gap-3 rounded-2xl bg-[url(./img/header.jpg)] bg-no-repeat bg-cover">
+    <Container className="px-10 py-15 lg:px-20 lg:py-30  flex justify-center items-center flex-col gap-3 rounded-2xl bg-[url(/img/header.jpg)] bg-no-repeat bg-cover">
       <h1 className="text-4xl lg:text-6xl  font-semibold text-gray-100 tracking-wide">
         {title}
       </h1>

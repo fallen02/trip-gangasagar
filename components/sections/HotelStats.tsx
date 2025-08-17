@@ -19,7 +19,7 @@ const stats = [
 export function HotelStats() {
   return (
     <div className="relative  mx-auto max-w-[86rem] w-dvw  my-10 ">
-      <div className="absolute bg-[url(./img/beach.webp)] bg-no-repeat bg-cover bg-center top-0 left-0 h-full w-full" />
+      <div className="absolute bg-[url(/img/beach.webp)] bg-no-repeat bg-cover bg-center top-0 left-0 h-full w-full" />
       <div className="absolute bg-black/30 top-0 left-0 h-full w-full" />
       <div className="relative grid grid-cols-2 lg:grid-flow-col w-full justify-between lg:p-20">
         {stats.map((stat, index) => (
