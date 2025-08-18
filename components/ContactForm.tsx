@@ -38,7 +38,7 @@ export function ContactForm() {
 
     try {
       setLoading(true);
-      const response = await fetch("http://localhost:3000/send", {
+      const response = await fetch("https://api-ivory-three.vercel.app/api/send", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

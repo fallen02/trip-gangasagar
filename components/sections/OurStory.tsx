@@ -1,5 +1,7 @@
 import { bookLink } from "@/constant/navmenu";
 import { Container } from "../Container";
+import story1 from "@/app/assets/story-1.jpg";
+import story2 from "@/app/assets/story-2.jpg";
 
 export function OurStory() {
   return (
@@ -27,12 +29,12 @@ export function OurStory() {
         </div>
       </div>
       <div className="flex gap-5">
-        <img src="https://placehold.co/400x600" alt="" className="" />
-        <img
-          src="https://placehold.co/400x600"
-          alt=""
-          className="hidden lg:block"
-        />
+        <div className="w-[400px] h-full">
+          <img src={story1} alt="" className="object-cover  object-center" />
+        </div>
+        <div className="w-[400px] h-full">
+          <img src={story2} alt="" className="hidden lg:block object-contain object-center" />
+        </div>
       </div>
     </Container>
   );
