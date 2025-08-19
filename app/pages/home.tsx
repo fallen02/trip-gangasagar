@@ -5,24 +5,27 @@ import { OurOffer } from "@/components/sections/OurOffer";
 import { Process } from "@/components/sections/Process";
 import { Destinations } from "@/components/sections/Destination";
 import { Pricing } from "@/components/sections/Pricing";
+import { GTManager } from "@/components/provider/GTM";
 
 export function meta({}: Route.MetaArgs) {
   return [
     { title: "Gangasagar Travels & Hotels" },
-    { name: "description", content: "The best private cars and hotels at Gangasagar" },
-    
+    {
+      name: "description",
+      content: "The best private cars and hotels at Gangasagar",
+    },
   ];
 }
 
 export default function Home() {
   return (
-    <>
+      <>
       <Hero />
       <Feature />
       <OurOffer />
       <Pricing />
       <Process />
       <Destinations />
-    </>
+      </>
   );
 }

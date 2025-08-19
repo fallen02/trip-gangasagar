@@ -60,7 +60,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
         {/* <!-- Google tag (gtag.js) --> */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-JDEDNS1RVY">
         </script>
-        
+
+        {/* <!-- End Google Tag Manager --> */}
+
 
       </head>
       <body>
