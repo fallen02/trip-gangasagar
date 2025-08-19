@@ -52,7 +52,7 @@ const tours = [
   {
     title: "Gangasagar Mela full Tour(5 days)",
     img: three,
-    price: "10099",
+    price: "5099",
     destination: "Gangasagar",
     duration: "5D/4N",
     type: "Specific Tour",
@@ -149,7 +149,6 @@ export function Pricing() {
                 <div className="">
                   <p className="text-2xl font-medium text-heading">
                     &#8377;{tour.price}
-                    <span className="text-base text-gray-500 ">/Person</span>
                   </p>
                 </div>
               </div>
