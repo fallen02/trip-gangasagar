@@ -14,15 +14,17 @@ export function Header() {
     open: (height = 1000) => ({
       clipPath: `circle(${height * 2 + 200}px at 40px 40px)`,
       transition: {
+        
         type: "spring",
         stiffness: 20,
         restDelta: 2,
       },
     }),
     closed: () => ({
-      clipPath: `circle(20px at ${width - 30}px 2em)`,
+      clipPath: `circle(0px at ${width - 30}px 2.5em)`,
       transition: {
-        delay: 0.2,
+        
+        delay: 0.3,
         type: "spring",
         stiffness: 400,
         damping: 40,
@@ -40,7 +42,7 @@ export function Header() {
         onClick={() => setMobileMenu(!mobileMenu)}
       >
         <motion.div
-          className="lg:hidden w-dvw h-dvh  absolute z-20 backdrop-blur-sm"
+          className="lg:hidden w-dvw h-dvh  absolute z-20 backdrop-blur-2xl bg-gray-100/20"
           //@ts-ignore
           variants={sidebarVariants}
         >
@@ -119,7 +121,7 @@ function MobileMenu() {
         >
           <a
             href={menu.href}
-            className="font-ubuntu font-medium tracking-wider"
+            className="font-ubuntu font-medium tracking-wider text-gray-50"
           >
             {menu.title}
           </a>

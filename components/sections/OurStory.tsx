@@ -29,10 +29,10 @@ export function OurStory() {
         </div>
       </div>
       <div className="flex gap-5">
-        <div className="w-[400px] h-full">
+        <div className="lg:w-[400px] h-auto">
           <img src={story1} alt="" className="object-cover  object-center" />
         </div>
-        <div className="w-[400px] h-full">
+        <div className="lg:w-[400px] h-auto">
           <img src={story2} alt="" className="hidden lg:block object-contain object-center" />
         </div>
       </div>
